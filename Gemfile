@@ -8,6 +8,7 @@ gem 'devise'
 
 gem 'slim'
 gem 'sass'
+gem 'compass'
 gem 'coffee-script'
 
 gem 'jquery-rails'
