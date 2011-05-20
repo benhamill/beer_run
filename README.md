@@ -1,8 +1,8 @@
-  B double-E double-R U N: Beer Run!
-  B double-E double-R U N: Beer Run!
-  All we need is a ten and a fiver,
-  A car and a key and a sober driver.
-  B double-E double-R U N: Beer Run!
+    B double-E double-R U N: Beer Run!
+    B double-E double-R U N: Beer Run!
+    All we need is a ten and a fiver,
+    A car and a key and a sober driver.
+    B double-E double-R U N: Beer Run!
 
 -- Todd Snider, "Beer Run"
 
