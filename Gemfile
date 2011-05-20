@@ -12,6 +12,8 @@ gem 'coffee-script'
 
 gem 'jquery-rails'
 
+gem 'heroku'
+
 group :development, :test do
   gem 'rspec-rails'
 end
