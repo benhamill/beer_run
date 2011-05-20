@@ -1,8 +1,9 @@
-> B double-E double-R U N: Beer Run!
-> B double-E double-R U N: Beer Run!
-> All we need is a ten and a fiver,
-> A car and a key and a sober driver.
-> B double-E double-R U N: Beer Run!
+> B double-E double-R U N: Beer Run!</br>
+> B double-E double-R U N: Beer Run!</br>
+> All we need is a ten and a fiver,</br>
+> A car and a key and a sober driver.</br>
+> B double-E double-R U N: Beer Run!</br>
+
 -- Todd Snider, "Beer Run"
 
 # Beer Run
@@ -22,4 +23,4 @@ Totally:
 3. Write test.
 4. Make test pass.
 5. Send pull request.
-6. have a beer.
+6. Have a beer.
