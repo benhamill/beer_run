@@ -6,5 +6,25 @@ html
     = javascript_include_tag 'application'
     = csrf_meta_tags
   body
-    h1 Beer Run
-    = yield
+    header
+      h1
+        a = link_to "Beer Run", root_url
+
+      nav
+        ul
+          - if user_signed_in?
+            li = link_to "Sign out", destroy_user_session_url
+          - else
+            li = link_to "Sign in", new_user_session_url
+    .main
+      section
+        - if notice
+          p#flash-notice = notice
+        - if alert
+          p#flash-alert = alert
+
+      = yield
+
+    footer
+      p An app about beer.
+      a href="http://github.com/benhamill/beer_run/" check it
