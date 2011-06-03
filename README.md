@@ -8,7 +8,7 @@
 
 # Beer Run
 
-Each user creates nominates a prioritized list of their five favorite beers. Beer Run then uses a [Borda count](http://en.wikipedia.org/wiki/Borda_count) with [truncated ballots](http://en.wikipedia.org/wiki/Borda_count#Truncated_ballots) and [multiple winners](http://en.wikipedia.org/wiki/Borda_count#Multiple_winners) to generate a list of beer prioritized for maximum average happiness amongst voters. Enough jargon for you? The point is, it makes an awesome list of everyone's favorite beers and you can buy beer that will make the group happy.
+Each user nominates a prioritized list of their five favorite beers. Beer Run then uses a [Borda count](http://en.wikipedia.org/wiki/Borda_count) with [truncated ballots](http://en.wikipedia.org/wiki/Borda_count#Truncated_ballots) and [multiple winners](http://en.wikipedia.org/wiki/Borda_count#Multiple_winners) to generate a list of beers prioritized for maximum average happiness amongst voters. Enough jargon for you? The point is, it makes an awesome list of everyone's favorite beers and you can buy beer that will make the group happy.
 
 ## Why?!?
 
