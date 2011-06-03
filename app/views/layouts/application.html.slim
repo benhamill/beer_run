@@ -8,25 +8,36 @@ html
   body
     section#header_wide
       header
-        h1 = link_to "Beer Run", root_url
+        .row
+          .column.grid_12
+            h1 = link_to "Beer Run", root_url
 
-        nav
-          ul
-            - if user_signed_in?
-              li = link_to "Sign out", destroy_user_session_url
-            - else
-              li = link_to "Sign in", new_user_session_url
-    section#main
-      section
-        - if notice
-          p#flash-notice = notice
-        - if alert
-          p#flash-alert = alert
+        .row
+          nav
+            .column.grid_8
+            ul
+              li.column.grid_2 = link_to "wut it do"
+              - if user_signed_in?
+                li.column.grid_2 = link_to "Sign out", destroy_user_session_url
+              - else
+                li.column.grid_2 = link_to "Sign in", new_user_session_url
 
-      = yield
+    section#main-wide
+      section#main
+        section.row
+          .column.grid_12
+            - if notice
+              p#flash-notice = notice
+            - if alert
+              p#flash-alert = alert
+
+        section.row
+          .column.grid_12
+            = yield
 
     section#footer_wide
-      footer
-        p An app about beer.
-        p
-          a href="http://github.com/benhamill/beer_run/" check it
+      footer.row
+        .column.grid_12
+          p An app about beer.
+          p
+            a href="http://github.com/benhamill/beer_run/" check it
