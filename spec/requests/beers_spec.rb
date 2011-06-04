@@ -2,10 +2,20 @@ require 'spec_helper'
 
 describe "Beers" do
   describe "GET /beers" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
+    it "displays a list of beers" do
+      given_a_beer("Convict Hill")
+      given_a_beer("Coors Lite")
+      given_a_beer("Strong Bow")
+
       get beers_path
-      response.status.should be(200)
+
+      response.body.should include("Convict Hill")
+      response.body.should include("Coors Lite")
+      response.body.should include("Strong Bow")
     end
+  end
+
+  def given_a_beer(name)
+    Beer.create :name => name
   end
 end
