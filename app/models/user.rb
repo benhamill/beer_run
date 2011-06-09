@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
 
   VOTE_NAMES = %w{first second third fourth fifth}
 
+  VOTE_NAMES.each do |name|
+    belongs_to "#{name}_place_beer", :class_name => 'Beer'
+  end
+
   def votes=(beers)
     beers.first(5).each_with_index do |beer, idx|
       self.send("#{VOTE_NAMES[idx]}_place_beer_id=", beer.id)
