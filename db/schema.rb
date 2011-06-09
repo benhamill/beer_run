@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110520023358) do
+ActiveRecord::Schema.define(:version => 20110609080955) do
 
   create_table "beers", :force => true do |t|
     t.string   "name"
@@ -31,9 +31,19 @@ ActiveRecord::Schema.define(:version => 20110520023358) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "first_place_beer_id"
+    t.integer  "second_place_beer_id"
+    t.integer  "third_place_beer_id"
+    t.integer  "fourth_place_beer_id"
+    t.integer  "fifth_place_beer_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["fifth_place_beer_id"], :name => "index_users_on_fifth_place_beer_id"
+  add_index "users", ["first_place_beer_id"], :name => "index_users_on_first_place_beer_id"
+  add_index "users", ["fourth_place_beer_id"], :name => "index_users_on_fourth_place_beer_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["second_place_beer_id"], :name => "index_users_on_second_place_beer_id"
+  add_index "users", ["third_place_beer_id"], :name => "index_users_on_third_place_beer_id"
 
 end
