@@ -15,3 +15,9 @@ Beer.create :name => 'Peroni'
 
 User.create :email => 'bob@gmail.com', :password => 'password'
 User.create :email => 'jen@gmail.com', :password => 'password'
+User.create :email => 'ted@gmail.com', :password => 'password'
+
+User.find_each do |user|
+  beers = Beer.order('random()').limit(5)
+  user.update_attribute :votes, beers
+end

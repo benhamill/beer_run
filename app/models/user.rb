@@ -6,4 +6,12 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
+
+  VOTE_NAMES = %w{first second third fourth fifth}
+
+  def votes=(beers)
+    beers.first(5).each_with_index do |beer, idx|
+      self.send("#{VOTE_NAMES[idx]}_place_beer_id=", beer.id)
+    end
+  end
 end
