@@ -13,9 +13,19 @@ describe "Beers" do
       response.body.should include("Coors Lite")
       response.body.should include("Strong Bow")
     end
-  end
 
-  def given_a_beer(name)
-    Beer.create :name => name
+    it "displays beers in order of most points to least" do
+      b1 = given_a_beer("Convict Hill")
+      b2 = given_a_beer("Coors Lite")
+      b3 = given_a_beer("Strong Bow")
+
+      given_a_user("steve").update_attribute(:votes, [b1, b3, b2])
+      given_a_user("clarice").update_attribute(:votes, [b1, b3, b2])
+      given_a_user("hannibal").update_attribute(:votes, [b1, b2, b3])
+
+      get beers_path
+
+      response.body.should match(/Convict Hill.*Strong Bow.*Coors Lite/)
+    end
   end
 end

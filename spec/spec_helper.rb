@@ -25,3 +25,11 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 end
+
+def given_a_beer(name)
+  Beer.create :name => name
+end
+
+def given_a_user(name)
+  User.create :email => "#{name}@gmail.com", :password => 'password'
+end
