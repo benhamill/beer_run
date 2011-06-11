@@ -73,6 +73,10 @@ header {
   }
 }
 
-footer p {
-  text-align: center;
+footer {
+  border-top: 1px solid $middle-grey;
+
+  p {
+    text-align: center;
+  }
 }

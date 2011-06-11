@@ -7,37 +7,37 @@ html
     = csrf_meta_tags
   body
     section#header_wide
-      header
-        .row
-          .column.grid_12
+      .container_12
+        header
+          .grid_12
             h1 = link_to "Beer Run", root_url
 
-        .row
-          nav
-            .column.grid_8
+          nav.grid_4.prefix_8
             ul
-              li.column.grid_2 = link_to "wut it do"
+              li.grid_2.alpha = link_to "wut it do"
               - if user_signed_in?
-                li.column.grid_2 = link_to "Sign out", destroy_user_session_url
+                li.grid_2.omega = link_to "Sign out", destroy_user_session_url
               - else
-                li.column.grid_2 = link_to "Sign in", new_user_session_url
+                li.grid_2.omega = link_to "Sign in", new_user_session_url
+        .clear
 
     section#main-wide
-      section#main
-        section.row
-          .column.grid_12
-            - if notice
-              p#flash-notice = notice
-            - if alert
-              p#flash-alert = alert
+      .container_12
+        section#main
+          section
+            .grid_12
+              - if notice
+                p#flash-notice = notice
+              - if alert
+                p#flash-alert = alert
 
-        section.row
-          .column.grid_12
-            = yield
+          section
+            .grid_12
+              = yield
 
     section#footer_wide
-      footer.row
-        .column.grid_12
-          p An app about beer.
-          p
-            a href="http://github.com/benhamill/beer_run/" check it
+      .container_12
+        footer.grid_12
+            p An app about beer.
+            p
+              a href="http://github.com/benhamill/beer_run/" check it
