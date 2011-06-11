@@ -9,10 +9,9 @@ html
     section#header_wide
       .container_12
         header
-          .grid_12
-            h1 = link_to "Beer Run", root_url
+          h1.grid_8 = link_to "Beer Run", root_url
 
-          nav.grid_4.prefix_8
+          nav.grid_4
             ul
               li.grid_2.alpha = link_to "wut it do"
               - if user_signed_in?
@@ -24,12 +23,12 @@ html
     section#main-wide
       .container_12
         section#main
-          section
+          section#notifications
             .grid_12
               - if notice
-                p#flash-notice = notice
+                p.flash#notice = notice
               - if alert
-                p#flash-alert = alert
+                p.flash#alert = alert
 
           section
             .grid_12
