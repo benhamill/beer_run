@@ -19,17 +19,51 @@ body {
   margin: 0;
   padding: 0;
   font-family: Nobile, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Nobile, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 55px;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+h3 {
+  font-size: 34px;
+  font-style: italic;
+}
+
+h4 {
+  font-size: 26px;
+}
+
+h5 {
+  font-size: 21px;
+}
+
+h6 {
+  font-size: 16px;
+  font-style: italic;
 }
 
 #header_wide {
   background-color: $middle-grey;
+  margin-bottom: 30px;
 }
 
 header {
   h1 {
     font-family: "Permanent Marker", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
     color: $dark-grey;
-    font-size: 50px;
     margin: 20px 0 0;
     padding: 0;
     height: 80px;
