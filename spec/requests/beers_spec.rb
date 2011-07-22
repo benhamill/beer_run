@@ -28,4 +28,16 @@ describe "Beers" do
       response.body.should match(/Convict Hill.*Strong Bow.*Coors Lite/)
     end
   end
+
+  describe "GET /vote" do
+    it "displays the list of all beers, alphabetized" do
+      given_a_beer("Strong Bow")
+      given_a_beer("Convict Hill")
+      given_a_beer("Coors Lite")
+
+      get vote_path
+
+      response.body.should match(/Beer List.*Coors Lite.*Sonvict Hill.*Strong Bow/)
+    end
+  end
 end
