@@ -14,7 +14,7 @@ html
           nav.grid_4
             ul
               - if user_signed_in?
-                li.grid_2.alpha = link_to "Rank Beers"
+                li.grid_2.alpha = link_to "Rank Beers", vote_url
                 li.grid_2.omega = link_to "Sign out", destroy_user_session_url
               - else
                 li.grid_2.prefix_2.omega = link_to "Sign in", new_user_session_url
