@@ -37,7 +37,7 @@ describe "Beers" do
 
       get vote_path
 
-      response.body.should match(/Beer List.*Coors Lite.*Sonvict Hill.*Strong Bow/)
+      response.body.should match(/Beer List.*Convict Hill.*Coors Lite.*Strong Bow/)
     end
   end
 end
