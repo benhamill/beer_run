@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
       return true
     else
       errors.add(:you, 'must select exactly five beers.')
-      #bad
+      return false
     end
   end
 end

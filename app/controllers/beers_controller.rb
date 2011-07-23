@@ -18,6 +18,6 @@ class BeersController < ApplicationController
       flash[:error] = 'You must submit exactly five beers.'
     end
 
-    redirect_to vote_path
+    redirect_to :action => :vote
   end
 end

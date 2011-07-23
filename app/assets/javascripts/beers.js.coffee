@@ -10,6 +10,8 @@ $(document).ready ->
 
       $('.vote_form').append("<input type=\"hidden\" name=\"beers[]\" value=\"#{id}\">")
 
+  build_form()
+
   $('.master_beer_list li').draggable
     helper: 'clone'
     cursor: 'move'
@@ -45,3 +47,5 @@ $(document).ready ->
 
     if parent_list.find('li').size() < 1
       parent_list.append('<li class="place_holder">Drag here.</li>')
+
+    build_form()
