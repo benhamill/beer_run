@@ -24,6 +24,8 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  # config.include Devise::TestHelpers#, :type => :controller
 end
 
 def given_a_beer(name)
@@ -32,4 +34,12 @@ end
 
 def given_a_user(name)
   User.create :email => "#{name}@gmail.com", :password => 'password'
+end
+
+def log_in(user)
+  post user_session_path, :user => {:email => user.email, :password => 'password'}
+end
+
+def given_a_logged_in_user(name)
+  log_in(given_a_user(name))
 end

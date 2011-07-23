@@ -35,6 +35,8 @@ describe "Beers" do
       given_a_beer("Convict Hill")
       given_a_beer("Coors Lite")
 
+      given_a_logged_in_user('bob')
+
       get vote_path
 
       response.body.should match(/Beer List.*Convict Hill.*Coors Lite.*Strong Bow/)

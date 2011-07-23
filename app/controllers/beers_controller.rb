@@ -4,11 +4,13 @@ class BeersController < ApplicationController
   end
 
   def vote
-   @beers = Beer.order(:name)
-   @votes = current_user.votes
+    authenticate_user!
+    @beers = Beer.order(:name)
+    @votes = current_user.votes
   end
 
   def record_vote
+    authenticate_user!
     params[:beers] ||= []
     current_user.votes = params[:beers].collect { |id| Beer.find_by_id(id) }.compact
 
