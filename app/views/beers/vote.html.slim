@@ -1,7 +1,27 @@
 h2 Vote
 
-.grid_4
+.grid_8.alpha
+  - if current_user.errors.any?
+    ol.errors
+      - current_user.errors.each do |error|
+        li= error
+
+  h3 Your Votes
+  ol.vote_list
+    - if @votes.any?
+      - @votes.each do |vote|
+        li
+          = vote.name
+          span.remove ✖
+    - else
+      li.place_holder Drag here.
+
+  = form_tag(vote_path, :method => :post, :class => 'vote_form') do
+    = submit_tag("Vote", :class => 'vote_button')
+
+.grid_4.omega
   h3 Beer List
-  ul
+  ul.master_beer_list
     - @beers.each do |beer|
-      li = beer.name
+      li id="beer_id_#{beer.id}"
+        = beer.name

@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
+  validate :check_beers
+
   VOTE_NAMES = %w{first second third fourth fifth}
 
   VOTE_NAMES.each do |name|
@@ -14,8 +16,33 @@ class User < ActiveRecord::Base
   end
 
   def votes=(beers)
-    beers.first(5).each_with_index do |beer, idx|
-      self.send("#{VOTE_NAMES[idx]}_place_beer_id=", beer.id)
+    VOTE_NAMES.each_with_index do |name, idx|
+      self.send("#{name}_place_beer=", beers[idx])
+    end
+  end
+
+  def votes
+    VOTE_NAMES.collect do |name|
+      self.send("#{name}_place_beer")
+    end
+  end
+
+  private
+
+  def check_beers
+    has_all_five = VOTE_NAMES.all? do |name|
+      self.send("#{name}_place_beer")
+    end
+
+    has_no_beers = VOTE_NAMES.all? do |name|
+      !self.send("#{name}_place_beer")
+    end
+
+    if has_all_five or has_no_beers
+      return true
+    else
+      errors.add(:you, 'must select exactly five beers.')
+      #bad
     end
   end
 end

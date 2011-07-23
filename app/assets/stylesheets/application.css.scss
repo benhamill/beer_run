@@ -6,17 +6,7 @@
  *= require_tree .
 */
 
-@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
-@import url(http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic);
-
-$dark-grey: #333;
-$light-grey: #eee;
-$middle-grey: #aaa;
-
-$gold: #ffcc00;
-$brown: #835c33;
-$grey-green: #cccc99;
-$white: #f5ffc0;
+@import 'globals';
 
 body {
   background-color: $brown;
@@ -64,6 +54,12 @@ a {
   color: $white;
 }
 
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 #header_wide {
   background-color: $white;
   margin-bottom: 30px;
@@ -86,9 +82,6 @@ header {
 
   nav {
     ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
       font-size: 18px;
 
       li {
@@ -126,6 +119,7 @@ header {
 }
 
 footer {
+  margin-top: 10px;
   border-top: 1px solid $gold;
 
   p {

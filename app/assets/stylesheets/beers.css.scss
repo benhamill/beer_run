@@ -3,3 +3,44 @@
   They will automatically be included in application.css.
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
+
+@import 'globals';
+
+.ui-draggable {
+  cursor: move;
+}
+
+input[type='submit'] {
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.vote_list {
+  border: 1px solid $brown;
+
+  &.target_outline {
+    border: 1px solid $gold;
+  }
+
+  &.drop_now {
+    color: $brown;
+    background-color: $white;
+  }
+
+  .remove {
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+  }
+}
+
+.master_beer_list li.ui-draggable,
+.vote_list li {
+  color: $brown;
+  background-color: $white;
+  border: 3px solid $gold;
+  padding: 3px;
+  margin-top: 5px;
+  width: 288px;
+}
