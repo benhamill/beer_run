@@ -6,7 +6,6 @@ $(document).ready ->
   build_form = ->
     $('.vote_form input[type="hidden"]').remove()
     $('.vote_list li').filter(':not(.ui-sortable-placeholder)').each ->
-      console.log 'wut'
       id = $(this).attr('id').replace('beer_id_', '')
 
       $('.vote_form').append("<input type=\"hidden\" name=\"beers[]\" value=\"#{id}\">")
