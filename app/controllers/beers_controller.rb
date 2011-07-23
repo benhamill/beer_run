@@ -9,8 +9,8 @@ class BeersController < ApplicationController
   end
 
   def record_vote
-    params[:votes] ||= []
-    current_user.votes = params[:votes].collect { |id| Beer.find_by_id(id) }.compact
+    params[:beers] ||= []
+    current_user.votes = params[:beers].collect { |id| Beer.find_by_id(id) }.compact
 
     if current_user.save
       flash[:notice] = 'Votes recorded.'
