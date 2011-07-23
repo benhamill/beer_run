@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0rc4'
 
 gem 'pg'
+gem 'thin'
 
 gem 'devise'
 gem 'slim'
