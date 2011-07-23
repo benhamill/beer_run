@@ -15,7 +15,7 @@ class BeersController < ApplicationController
     if current_user.save
       flash[:notice] = 'Votes recorded.'
     else
-      flash[:error] = 'You must submit exactly five beers.'
+      flash[:alert] = current_user.errors.to_a.join("\n")
     end
 
     redirect_to :action => :vote

@@ -10,7 +10,7 @@ h2 Vote
   ol.vote_list
     - if @votes.any?
       - @votes.each do |vote|
-        li
+        li id="beer_id_#{vote.id}"
           = vote.name
           span.remove ✖
     - else

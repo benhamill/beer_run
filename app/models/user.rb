@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
     if has_all_five or has_no_beers
       return true
     else
-      errors.add(:you, 'must select exactly five beers.')
+      errors.add(:base, 'You must select exactly 5 or 0 beers.')
       return false
     end
   end
