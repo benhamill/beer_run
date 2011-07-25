@@ -10,6 +10,7 @@ gem 'slim'
 gem 'sass'
 gem 'coffee-script'
 gem 'jquery-rails'
+gem 'uglifier'
 
 group :development, :test do
   gem 'heroku'
