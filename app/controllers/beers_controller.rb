@@ -3,6 +3,14 @@ class BeersController < ApplicationController
     @beers = Beer.all.sort_by { |beer| -beer.points }
   end
 
+  def new
+    @beer = Beer.new
+  end
+
+  def create
+    @beer = Beer.create(params[:beer])
+  end
+
   def vote
     authenticate_user!
     @beers = Beer.order(:name)

@@ -1,5 +1,5 @@
 BeerRun::Application.routes.draw do
-  resources :beers, :only => [:index]
+  resources :beers, :only => [:index, :new, :create]
   get '/vote' => 'beers#vote'
   post '/vote' => 'beers#record_vote'
 
