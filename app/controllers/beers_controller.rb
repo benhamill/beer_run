@@ -12,7 +12,7 @@ class BeersController < ApplicationController
 
     if @beer.save
       flash[:notice] = 'Beer created.'
-      redirect_to :index
+      redirect_to :beers
     else
       render :new
     end
