@@ -1,6 +1,12 @@
 h2 Add A Beer
 
 = form_for @beer do |f|
+  - if @beer.errors.any?
+    .errors
+      p Couldn't save it:
+      ul
+        - @beer.errors.to_a.each do |error|
+          li = error
   = f.label :name
   = f.text_field :name
   = f.submit 'Add'

@@ -60,6 +60,20 @@ ul, ol {
   padding: 0;
 }
 
+form {
+  .errors {
+    color: red;
+    border: 1px solid red;
+    background-color: #fdd;
+    padding: 10px 20px;
+  }
+
+  .field_with_errors {
+    display: inline;
+    border: 1px solid red;
+  }
+}
+
 #header_wide {
   background-color: $white;
   margin-bottom: 30px;

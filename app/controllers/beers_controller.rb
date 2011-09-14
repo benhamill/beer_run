@@ -8,7 +8,14 @@ class BeersController < ApplicationController
   end
 
   def create
-    @beer = Beer.create(params[:beer])
+    @beer = Beer.new(params[:beer])
+
+    if @beer.save
+      flash[:notice] = 'Beer created.'
+      redirect_to :index
+    else
+      render :new
+    end
   end
 
   def vote
