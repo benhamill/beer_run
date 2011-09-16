@@ -1,0 +1,19 @@
+h2 Change Password
+
+= form_for @user, :url => user_password_url do |f|
+  = f.label :current_password
+  br
+  = f.password_field :current_password
+  br
+
+  = f.label :password
+  br
+  = f.password_field :password
+  br
+
+  = f.label :password_confirmation
+  br
+  = f.password_field :password_confirmation
+  br
+
+  = f.submit "Change my password"
