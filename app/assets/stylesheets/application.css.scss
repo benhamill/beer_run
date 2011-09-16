@@ -106,12 +106,33 @@ header {
     }
   }
 
+  .log_in_out {
+    ul {
+      font-size: 10px;
+
+      li {
+        margin: 20px 0 0;
+        padding: 0;
+
+        a {
+          text-decoration: none;
+          color: $brown;
+          padding: 6px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
   nav {
     ul {
       font-size: 18px;
 
       li {
-        margin: 60px 0 0;
+        margin: 25px 0 0;
         padding: 0;
 
         a {

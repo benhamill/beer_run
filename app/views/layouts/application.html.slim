@@ -9,16 +9,22 @@ html
     section#header_wide
       .container_12
         header
-          h1.grid_6 = link_to "Beer Run", root_url
+          h1.grid_5 = link_to "Beer Run", root_url
 
-          nav.grid_6
+          .log_in_out.grid_2.prefix_5
             ul
               - if user_signed_in?
-                li.grid_2.alpha = link_to "Rank Beers", vote_url
-                li.grid_2 = link_to "Add a Beer", new_beer_url
-                li.grid_2.omega = link_to "Sign out", destroy_user_session_url
+                li.grid_1.alpha = link_to "Settings", edit_user_password_url
+                li.grid_1.omega = link_to "Log out", destroy_user_session_url
               - else
-                li.grid_2.prefix_4.omega = link_to "Sign in", new_user_session_url
+                li.grid_1.prefix_1.omega = link_to "Log in", new_user_session_url
+
+          nav.grid_6.suffix_1
+            ul
+              - if user_signed_in?
+                li.grid_2.alpha = link_to "See Rankings", root_url
+                li.grid_2 = link_to "Rank Beers", vote_url
+                li.grid_2.omega = link_to "Add a Beer", new_beer_url
         .clear
 
     section#main-wide
