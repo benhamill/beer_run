@@ -1,26 +1,23 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '~> 3.1'
 
 gem 'pg'
 gem 'thin'
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
-  gem 'uglifier'
-end
 
 gem 'devise'
 gem 'slim'
 gem 'jquery-rails'
 
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+end
+
 group :development, :test do
-  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-doc'
   gem 'heroku'
   gem 'rspec-rails'
-  # Pretty printed test output
-  gem 'turn', :require => false
 end
