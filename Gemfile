@@ -20,4 +20,6 @@ group :development, :test do
   gem 'pry-doc'
   gem 'heroku'
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
 end
