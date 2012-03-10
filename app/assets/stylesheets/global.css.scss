@@ -2,11 +2,10 @@ body {
   padding-top: 60px;
 
   #footer_wide {
-    margin-top: 20px;
-    border-top: 1px solid $red;
-
     footer {
-      margin-top: 10px;
+      margin-top: 30px;
+      padding-top: 10px;
+      border-top: 1px solid $grayLighter;
 
       p {
         text-align: center;
