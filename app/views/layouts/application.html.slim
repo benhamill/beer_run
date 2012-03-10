@@ -5,7 +5,7 @@ html
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  body
+  body class=controller.controller_name
     header.navbar.navbar-fixed-top
       .navbar-inner
         .container
@@ -48,7 +48,7 @@ html
                   = alert_close
                   = alert
 
-          section
+          section.main
             = yield
 
     section#footer_wide
