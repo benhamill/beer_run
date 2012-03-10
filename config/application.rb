@@ -57,6 +57,6 @@ module BeerRun
     config.assets.version = '1.0'
 
     # Don't bother booting the app during asset precompilation
-    config.assets.initialize_during_precompile = false
+    config.assets.initialize_on_precompile = false
   end
 end
