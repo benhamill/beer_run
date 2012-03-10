@@ -1,5 +1,9 @@
 module ApplicationHelper
   def active_nav_li(text, path)
-    render partial: 'shared/bootstrap_active_nav_li', locals: { path: path, text: text }
+    render partial: 'shared/active_nav_li', locals: { path: path, text: text }
+  end
+
+  def alert_close
+    render partial: 'shared/alert_close'
   end
 end
