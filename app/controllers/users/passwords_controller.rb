@@ -1,7 +1,9 @@
-class PasswordsController < ApplicationController
-  before_filter :authenticate_user!
+class Users::PasswordsController < Devise::PasswordsController
+  # before_filter :authenticate_user!
 
   def edit
+    Rails.logger.info("\n\n\nWOAH!\n\n\n\n")
+    render text: 'WOAH' and return
     @user = current_user
   end
 
