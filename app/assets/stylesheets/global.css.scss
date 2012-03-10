@@ -1,0 +1,29 @@
+body {
+  padding-top: 60px;
+
+  .flash {
+    border: 1px solid green;
+    color: green;
+    background-color: #dfd;
+    padding: 10px 20px;
+
+    &#alert {
+      border-color: red;
+      color: red;
+      background-color: #fdd;
+    }
+  }
+
+  #footer_wide {
+    margin-top: 20px;
+    border-top: 1px solid $red;
+
+    footer {
+      margin-top: 10px;
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+}

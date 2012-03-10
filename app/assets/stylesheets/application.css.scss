@@ -1,175 +1,152 @@
-/*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
- *= require_tree .
-*/
+// @import 'bootstrap_overrides';
+@import 'bootstrap';
 
-@import 'globals';
+// @import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+// @import url(http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic);
 
-body {
-  background-color: $brown;
-  color: $white;
-  margin: 0;
-  padding: 0;
-  font-family: Nobile, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
-  font-size: 16px;
-}
+@import 'global';
+// @import 'beers';
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Nobile, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  font-size: 55px;
-}
-
-h2 {
-  font-size: 42px;
-}
-
-h3 {
-  font-size: 34px;
-  font-style: italic;
-}
-
-h4 {
-  font-size: 26px;
-}
-
-h5 {
-  font-size: 21px;
-}
-
-h6 {
-  font-size: 16px;
-  font-style: italic;
-}
-
-a {
-  color: $white;
-}
-
-ul, ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-form {
-  .errors {
-    color: red;
-    border: 1px solid red;
-    background-color: #fdd;
-    padding: 10px 20px;
-
-    p {
-      margin: 0;
-      padding: 0;
-    }
-
-    ol {
-      list-style-type: disc;
-
-      li {
-        margin-left: 3em;
-      }
-    }
-  }
-
-  .field_with_errors {
-    display: inline;
-  }
-}
-
-#header_wide {
-  background-color: $white;
-  margin-bottom: 30px;
-  border-bottom: 5px solid $gold;
-}
-
-header {
-  h1 {
-    font-family: "Permanent Marker", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
-    color: $brown;
-    margin: 20px 0 0;
-    padding: 0;
-    height: 80px;
-
-    a {
-      color: $brown;
-      text-decoration: none;
-    }
-  }
-
-  .log_in_out {
-    ul {
-      font-size: 10px;
-
-      li {
-        margin: 20px 0 0;
-        padding: 0;
-
-        a {
-          text-decoration: none;
-          color: $brown;
-          padding: 6px;
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
-
-  nav {
-    ul {
-      font-size: 18px;
-
-      li {
-        margin: 25px 0 0;
-        padding: 0;
-
-        a {
-          text-decoration: none;
-          color: $brown;
-          display: block;
-          padding: 6px;
-          border-bottom: 6px solid $white;
-          height: 22px;
-
-          &:hover {
-            border-bottom: 6px solid $brown;
-          }
-        }
-      }
-    }
-  }
-}
-
-.flash {
-  border: 1px solid green;
-  color: green;
-  background-color: #dfd;
-  padding: 10px 20px;
-
-  &#alert {
-    border-color: red;
-    color: red;
-    background-color: #fdd;
-  }
-}
-
-footer {
-  margin-top: 10px;
-  border-top: 1px solid $gold;
-
-  p {
-    text-align: center;
-  }
-}
+// body {
+//   background-color: $brown;
+//   color: $white;
+//   margin: 0;
+//   padding: 0;
+//   font-family: Nobile, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
+//   font-size: 16px;
+// }
+// 
+// h1, h2, h3, h4, h5, h6 {
+//   font-family: Nobile, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
+//   font-weight: bold;
+//   margin: 0;
+//   padding: 0;
+// }
+// 
+// h1 {
+//   font-size: 55px;
+// }
+// 
+// h2 {
+//   font-size: 42px;
+// }
+// 
+// h3 {
+//   font-size: 34px;
+//   font-style: italic;
+// }
+// 
+// h4 {
+//   font-size: 26px;
+// }
+// 
+// h5 {
+//   font-size: 21px;
+// }
+// 
+// h6 {
+//   font-size: 16px;
+//   font-style: italic;
+// }
+// 
+// a {
+//   color: $white;
+// }
+// 
+// ul, ol {
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+// }
+// 
+// form {
+//   .errors {
+//     color: red;
+//     border: 1px solid red;
+//     background-color: #fdd;
+//     padding: 10px 20px;
+// 
+//     p {
+//       margin: 0;
+//       padding: 0;
+//     }
+// 
+//     ol {
+//       list-style-type: disc;
+// 
+//       li {
+//         margin-left: 3em;
+//       }
+//     }
+//   }
+// 
+//   .field_with_errors {
+//     display: inline;
+//   }
+// }
+// 
+// #header_wide {
+//   background-color: $white;
+//   margin-bottom: 30px;
+//   border-bottom: 5px solid $gold;
+// }
+// 
+// header {
+//   h1 {
+//     font-family: "Permanent Marker", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
+//     color: $brown;
+//     margin: 20px 0 0;
+//     padding: 0;
+//     height: 80px;
+// 
+//     a {
+//       color: $brown;
+//       text-decoration: none;
+//     }
+//   }
+// 
+//   .log_in_out {
+//     ul {
+//       font-size: 10px;
+// 
+//       li {
+//         margin: 20px 0 0;
+//         padding: 0;
+// 
+//         a {
+//           text-decoration: none;
+//           color: $brown;
+//           padding: 6px;
+// 
+//           &:hover {
+//             text-decoration: underline;
+//           }
+//         }
+//       }
+//     }
+//   }
+// 
+//   nav {
+//     ul {
+//       font-size: 18px;
+// 
+//       li {
+//         margin: 25px 0 0;
+//         padding: 0;
+// 
+//         a {
+//           text-decoration: none;
+//           color: $brown;
+//           display: block;
+//           padding: 6px;
+//           border-bottom: 6px solid $white;
+//           height: 22px;
+// 
+//           &:hover {
+//             border-bottom: 6px solid $brown;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
