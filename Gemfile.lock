@@ -130,6 +130,9 @@ GEM
     rspec-core (2.8.0)
     rspec-expectations (2.8.0)
       diff-lcs (~> 1.1.2)
+    rspec-html-matchers (0.2.3)
+      nokogiri (>= 1.4.4)
+      rspec (>= 2.0.0)
     rspec-mocks (2.8.0)
     rspec-rails (2.8.1)
       actionpack (>= 3.0)
@@ -190,6 +193,7 @@ DEPENDENCIES
   pry-doc
   pry-rails
   rails (~> 3.1)
+  rspec-html-matchers
   rspec-rails
   sass-rails
   slim

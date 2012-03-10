@@ -17,3 +17,12 @@ h2 Change Password
   br
 
   = f.submit "Change my password"
+
+h2 Change Notification Settings
+
+= form_for @user, :url => user_password_url do |f|
+  = f.label :notification_frequency
+  = f.select :notification_frequency, [[ 'Never', :never ], [ 'Weekly', :weekly ], [ 'Monthly', :monthly ]]
+  br
+
+  = f.submit "Change my Notifications"
