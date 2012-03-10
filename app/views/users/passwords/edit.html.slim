@@ -1,14 +1,21 @@
-h2 Change your password
-= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
-  = devise_error_messages!
-  = f.hidden_field :reset_password_token
-  div
-    = f.label :password, "New password"
-    br/
-    = f.password_field :password
-  div
-    = f.label :password_confirmation, "Confirm new password"
-    br/
-    = f.password_field :password_confirmation
-  div= f.submit "Change my password"
-= render "links"
+.row
+  .span6.offset3
+    = form_for(resource, :as => resource_name, url: password_path(resource_name), html: { method: :put, class: 'form-horizontal' }) do |f|
+      fieldset
+        legend Change your password
+
+        = devise_error_messages!
+
+        .control-group
+          = f.label :password, "New password", class: 'control-label'
+          .controls
+            = f.password_field :password, tabindex: 1, autofocus: true
+        .control-group
+          = f.label :password_confirmation, "Confirm new password", class: 'control-label'
+          .controls
+            = f.password_field :password_confirmation, tabindex: 2
+        .form-actions
+          = f.hidden_field :reset_password_token
+          = f.submit "Change my password", class: 'btn btn-large', tabindex: 3
+
+    = render "links"
