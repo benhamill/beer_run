@@ -51,9 +51,15 @@ Set environment variables:
 
     $ export FROM_EMAIL_ADDRESS=your@email.com
 
-(or if you're running on heroku)
+If you're running on Heroku
 
-    $ herkou config:add FROM_EMAIL_ADDRESS=your@email.com
+    $ herkou config:add FROM_EMAIL_ADDRESS=your@email.com HEROKU=1
+    $ heroku addons:add sendgrid:starter
+    $ heroku addons:add cron:daily
+
+The `HEROKU` var tells ActionMailer to us Sendgrid.  You should also be aware that the cron
+task will run each day _at the same time you add it to heroku_.  So if you want emails to be
+sent a 9:00am, you should execute that last command at 9:00am.
 
 Run specs:
 
