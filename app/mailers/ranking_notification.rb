@@ -1,4 +1,6 @@
 class RankingNotificationMailer < ActionMailer::Base
+  default :from => ENV["FROM_EMAIL_ADDRESS"]
+
   def notification(recipients)
     @beers = Beer.all.sort_by { |beer| -beer.points }
 

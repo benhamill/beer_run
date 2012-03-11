@@ -56,6 +56,7 @@ describe "cron task" do
       mail.to.should_not include('bob@gmail.com')
       mail.to.should_not include('david@gmail.com')
       mail.to.should_not include('eric@gmail.com')
+      mail.from.should eq('from@email.com')
       mail.subject.should match(/Time for a Beer Run!/)
       mail.body.should match(/Here are the current rankings/)
       mail.body.to_s.should have_tag("ol") do

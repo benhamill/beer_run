@@ -47,6 +47,14 @@ Set up the database:
 
     $ rake db:setup
 
+Set environment variables:
+
+    $ export FROM_EMAIL_ADDRESS=your@email.com
+
+(or if you're running on heroku)
+
+    $ herkou config:add FROM_EMAIL_ADDRESS=your@email.com
+
 Run specs:
 
     # rake spec
