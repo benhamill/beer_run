@@ -33,8 +33,10 @@ def given_a_beer(name)
   Beer.create :name => name
 end
 
-def given_a_user(name)
-  User.create :email => "#{name}@gmail.com", :password => 'password'
+def given_a_user(name, *opts)
+  u=User.create(:email => "#{name}@gmail.com", :password => 'password')
+  u.update_attributes(*opts) unless opts.nil?
+  u
 end
 
 def log_in(user)
