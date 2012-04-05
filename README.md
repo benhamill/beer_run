@@ -34,7 +34,7 @@ Totally:
 5. Send pull request.
 6. Have a beer.
 
-### Setting Up a Dev Environment
+## Setting Up a Dev Environment
 
 Beer Run uses Ruby **1.9.2** and Postgresql. Install those from whichever
 source you love the most.
@@ -52,3 +52,20 @@ Run specs:
     # rake spec
 
 If everything's green, you should be good to go.
+
+
+## Deploying
+
+Set environment variables:
+
+    $ export FROM_EMAIL_ADDRESS=your@email.com
+
+If you're running on Heroku
+
+    $ herkou config:add FROM_EMAIL_ADDRESS=your@email.com HEROKU=1
+    $ heroku addons:add sendgrid:starter
+    $ heroku addons:add cron:daily
+
+The `HEROKU` var tells ActionMailer to use Sendgrid.  You should also be aware that the cron
+task will run each day _at the same time you add it to heroku_.  So if you want emails to be
+sent a 9:00am, you should execute that last command at 9:00am.

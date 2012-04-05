@@ -10,9 +10,10 @@ class PasswordsController < ApplicationController
 
     if @user.update_with_password(params[:user])
       sign_in(@user, :bypass => true)
-      redirect_to root_url, :notice => "Password updated!"
+      redirect_to edit_user_password_path, :notice => "Password updated!"
     else
-      render :edit
+      @user.update_attributes(params[:user])
+      redirect_to edit_user_password_path, :notice => "Notification Settings Updated"
     end
   end
 end
