@@ -2,21 +2,3 @@
 
 @import 'global';
 @import 'beers';
-
-.alert {
-  button.close {
-    border: none;
-    background-color: inherit;
-  }
-
-  ul {
-    margin: 0;
-  }
-}
-
-form {
-  .field_with_errors {
-    display: inline;
-    @include formFieldState($errorText, $errorText, $errorBackground);
-  }
-}
