@@ -5,47 +5,55 @@ html
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  body
-    section#header_wide
-      .container_12
-        header
-          h1.grid_5 = link_to "Beer Run", root_url
+  body class=controller.controller_name
+    header.navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          = link_to "Beer Run", root_path, class: 'brand'
 
-          .log_in_out.grid_2.prefix_5
-            ul
+          nav
+            ul.nav
               - if user_signed_in?
-                li.grid_1.alpha = link_to "Settings", edit_user_password_url
-                li.grid_1.omega = link_to "Log out", destroy_user_session_url
+                = active_nav_li 'See Rankings', root_path
+                = active_nav_li 'Rank Beers', vote_path
+                = active_nav_li 'Add a Beer', new_beer_path
+
+            ul.nav.pull-right
+              - if user_signed_in?
+                li.dropdown
+                  a.dropdown-toggle data-toggle='dropdown'
+                    i.icon-user.icon-white
+                    '
+                    = current_user.email
+                    '
+                    i.caret
+                  ul.dropdown-menu
+                    = active_nav_li "Change password", edit_registration_path
+                    = active_nav_li "Log out", destroy_user_session_path, method: :delete
               - else
-                li.grid_1.prefix_1.omega = link_to "Log in", new_user_session_url
-
-          nav.grid_6.suffix_1
-            ul
-              - if user_signed_in?
-                li.grid_2.alpha = link_to "See Rankings", root_url
-                li.grid_2 = link_to "Rank Beers", vote_url
-                li.grid_2.omega = link_to "Add a Beer", new_beer_url
-        .clear
+                = active_nav_li 'Log in', new_user_session_path
 
     section#main-wide
-      .container_12
+      .container
         section#main
-          section#notifications
-            .grid_12
-              - if notice
-                p.flash#notice = notice
-              - if alert
-                p.flash#alert = alert
+          section#notifications.row
+            - if notice
+              .span12
+                .alert.alert-success
+                  = alert_close
+                  = notice
+            - if alert
+              .span12
+                .alert.alert-error
+                  = alert_close
+                  = alert
 
-          section
-            .grid_12
-              = yield
-        .clear
+          section.main
+            = yield
 
     section#footer_wide
-      .container_12
-        footer.grid_12
+      .container
+        footer
             p An app about beer.
             p
               a href="http://github.com/benhamill/beer_run/" check it
-        .clear
