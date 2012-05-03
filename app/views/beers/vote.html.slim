@@ -11,17 +11,19 @@
       .span8
         h3 Pick Five
 
-        ol.vote_list
-          - if @votes.any?
-            - @votes.each do |vote|
-              li id="beer_id_#{vote.id}"
-                = vote.name
-                span.remove ✖
-          - else
-            li.place_holder Drag here.
+        .row
+          .span4
+            ol.vote_list
+              - if @votes.any?
+                - @votes.each do |vote|
+                  li id="beer_id_#{vote.id}" class='vote'
+                    = vote.name
+                    span.remove ✖
+              - else
+                li.place_holder Drag here.
 
-        = form_tag(vote_path, method: :post, class: 'vote_form') do
-          = submit_tag("Vote", class: 'btn btn-primary btn-large')
+            = form_tag(vote_path, method: :post, class: 'vote_form') do
+              = submit_tag("Vote", class: 'btn btn-primary btn-large')
 
       .span4
         h3 Beer List

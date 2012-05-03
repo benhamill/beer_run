@@ -2,22 +2,22 @@
   cursor: move;
 }
 
-input[type='submit'] {
-  font-size: 16px;
-  margin-top: 20px;
-  font-weight: bold;
-}
-
 .vote_list {
-  border: 1px solid $brown;
+  border: 1px solid $white;
+  padding: 3px;
 
   &.target_outline {
-    border: 1px solid $gold;
+    border-color: $blue;
+    background-color: transparentize($blue, 0.80);
   }
 
   &.drop_now {
-    color: $brown;
-    background-color: $white;
+    border-color: $green;
+    background-color: transparentize($green, 0.80);
+  }
+
+  li.vote {
+    cursor: move;
   }
 
   .remove {
@@ -29,10 +29,8 @@ input[type='submit'] {
 
 .master_beer_list li.ui-draggable,
 .vote_list li {
-  color: $brown;
-  background-color: $white;
-  border: 3px solid $gold;
+  background-color: $grayLighter;
+  border: 1px solid $grayLight;
   padding: 3px;
   margin-top: 5px;
-  width: 288px;
 }
