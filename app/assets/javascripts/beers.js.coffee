@@ -28,7 +28,7 @@ $(document).ready ->
       $(this).find('li').filter( ->
         $(this).text() == ui.draggable.text() + '✖'
       ).remove()
-      $("<li id=\"#{ui.draggable.attr('id')}\"></li>").text(ui.draggable.text()).append('<span class="remove">✖</span>').appendTo(this)
+      $("<li id=\"#{ui.draggable.attr('id')}\" class=\"vote\"></li>").text(ui.draggable.text()).append('<span class="remove">✖</span>').appendTo(this)
       build_form()
     tolerance: 'touch'
   ).sortable(
