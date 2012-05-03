@@ -28,7 +28,7 @@ html
                     '
                     i.caret
                   ul.dropdown-menu
-                    = active_nav_li "Change password", edit_user_password_path
+                    = active_nav_li "Change password", edit_registration_path
                     = active_nav_li "Log out", destroy_user_session_path, method: :delete
               - else
                 = active_nav_li 'Log in', new_user_session_path
