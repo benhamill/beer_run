@@ -1,12 +1,19 @@
-h2 Add A Beer
+.row
+  .span6.offset3
+    = form_for @beer, html: { class: 'form-horizontal'} do |f|
+      fieldset
+        legend Add A Beer
+        - if @beer.errors.any?
+          .errors
+            p Couldn't save it:
+            ul
+              - @beer.errors.to_a.each do |error|
+                li = error
 
-= form_for @beer do |f|
-  - if @beer.errors.any?
-    .errors
-      p Couldn't save it:
-      ul
-        - @beer.errors.to_a.each do |error|
-          li = error
-  = f.label :name
-  = f.text_field :name
-  = f.submit 'Add'
+        .control-group
+          = f.label :name, class: 'control-label'
+          .controls
+            = f.text_field :name, tabindex: 1, autofocus: true
+
+        .form-actions
+          = f.submit 'Add Beer', class: 'btn btn-primary btn-large', tabindex: 2
