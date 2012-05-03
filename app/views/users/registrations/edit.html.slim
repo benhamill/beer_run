@@ -1,0 +1,32 @@
+.row
+  .span6.offset3
+    = form_for(resource, as: resource_name, url: registration_path, html: { class: 'form-horizontal', method: 'put' }) do |f|
+      fieldset
+        legend Edit #{resource_name.to_s.humanize}
+
+        = devise_error_messages!
+
+        .control-group
+          = f.label :email, class: 'control-label'
+          .controls
+            = f.email_field :email, tabindex: 1, autofocus: true
+
+        .control-group
+          = f.label :password, 'New Password', class: 'control-label'
+          .controls
+            = f.password_field :password, autocomplete: "off", tabindex: 2
+            p.help-block Leave blank if you don't want to change it.
+
+        .control-group
+          = f.label :password_confirmation, 'Confirm New Password', class: 'control-label'
+          .controls
+            = f.password_field :password_confirmation, autocomplete: 'off', tabindex: 3
+
+        .control-group
+          = f.label :current_password, 'Old Password', class: 'control-label'
+          .controls
+            = f.password_field :current_password, autocomplete: 'off', tabindex: 4
+            p.help-block We need your current password to confirm your changes.
+
+        .form-actions
+          = f.submit "Update", class: 'btn-primary btn btn-large', tabindex: 5

@@ -1,0 +1,24 @@
+.row
+  .span6.offset3
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }) do |f|
+      fieldset
+        legend Log In
+
+        .control-group
+          = f.label :email, class: 'control-label'
+          .controls
+            = f.email_field :email, tabindex: 1, autofocus: true
+        .control-group
+          = f.label :password, class: 'control-label'
+          .controls
+            = f.password_field :password, tabindex: 2
+        - if devise_mapping.rememberable?
+          .control-group
+            .controls
+              = f.label :remember_me, class: 'checkbox' do
+                = f.check_box :remember_me, tabindex: 3
+                ' Remember me
+        .form-actions
+          = f.submit "Log in", class: 'btn-primary btn btn-large', tabindex: 4
+
+    = render "users/links"
