@@ -3,28 +3,20 @@
 @import 'global';
 @import 'beers';
 
-// form {
-//   .errors {
-//     color: red;
-//     border: 1px solid red;
-//     background-color: #fdd;
-//     padding: 10px 20px;
-// 
-//     p {
-//       margin: 0;
-//       padding: 0;
-//     }
-// 
-//     ol {
-//       list-style-type: disc;
-// 
-//       li {
-//         margin-left: 3em;
-//       }
-//     }
-//   }
-// 
-//   .field_with_errors {
-//     display: inline;
-//   }
-// }
+.alert {
+  button.close {
+    border: none;
+    background-color: inherit;
+  }
+
+  ul {
+    margin: 0;
+  }
+}
+
+form {
+  .field_with_errors {
+    display: inline;
+    @include formFieldState($errorText, $errorText, $errorBackground);
+  }
+}

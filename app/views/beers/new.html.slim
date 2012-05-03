@@ -4,10 +4,10 @@
       fieldset
         legend Add A Beer
         - if @beer.errors.any?
-          .errors
-            p Couldn't save it:
-            ul
-              - @beer.errors.to_a.each do |error|
+          .alert.alert-error
+            = alert_close
+            ul.unstyled
+              - @beer.errors.full_messages.each do |error|
                 li = error
 
         .control-group

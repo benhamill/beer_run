@@ -1,5 +1,5 @@
 class Beer < ActiveRecord::Base
-  validates_uniqueness_of :name
+  validates :name, uniqueness: true, presence: true
 
   def points
     5 * first_place_votes +
