@@ -34,5 +34,21 @@ body {
       display: inline;
       @include formFieldState($errorText, $errorText, $errorBackground);
     }
+
+    #error_explanation {
+      @extend .alert;
+      @extend .alert-block;
+      @extend .alert-error;
+
+      h1, h2 {
+        @extend .alert-heading;
+        @extend h4;
+      }
+
+      ul {
+        margin-left: 0;
+        list-style: none;
+      }
+    }
   }
 }
