@@ -1,27 +1,32 @@
-h2 Vote
+.row
+  .span12
+    h2 Vote
 
-.grid_8.alpha
-  - if current_user.errors.any?
-    ol.errors
-      - current_user.errors.each do |error|
-        li= error
+    - if current_user.errors.any?
+      ol.errors
+        - current_user.errors.each do |error|
+          li= error
 
-  h3 Pick Five
-  ol.vote_list
-    - if @votes.any?
-      - @votes.each do |vote|
-        li id="beer_id_#{vote.id}"
-          = vote.name
-          span.remove ✖
-    - else
-      li.place_holder Drag here.
+    .row
+      .span8
+        h3 Pick Five
 
-  = form_tag(vote_path, :method => :post, :class => 'vote_form') do
-    = submit_tag("Vote", :class => 'vote_button')
+        ol.vote_list
+          - if @votes.any?
+            - @votes.each do |vote|
+              li id="beer_id_#{vote.id}"
+                = vote.name
+                span.remove ✖
+          - else
+            li.place_holder Drag here.
 
-.grid_4.omega
-  h3 Beer List
-  ul.master_beer_list
-    - @beers.each do |beer|
-      li id="beer_id_#{beer.id}"
-        = beer.name
+        = form_tag(vote_path, method: :post, class: 'vote_form') do
+          = submit_tag("Vote", class: 'btn btn-primary btn-large')
+
+      .span4
+        h3 Beer List
+
+        ul.master_beer_list.unstyled
+          - @beers.each do |beer|
+            li id="beer_id_#{beer.id}"
+              = beer.name
