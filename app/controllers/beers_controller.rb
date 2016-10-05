@@ -1,6 +1,14 @@
 class BeersController < ApplicationController
+  BEERS_BOB_LIKES = ["Lone Star", "Pabst Blue Ribbon", "St. Thomas Inquisition Special"]
+  
   def index
-    @beers = Beer.all.sort_by { |beer| -beer.points }
+    @beers = Beer.all.sort_by do |beer| 
+      if BEERS_BOB_LIKES.include?(beer.name)
+        -1
+      else
+        -beer.points 
+      end
+    end
   end
 
   def new
